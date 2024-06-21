@@ -44,3 +44,16 @@ let side_periph = {
     D 30, D 11,   S 3, S 4, S 5,
   ]
 }
+
+### Limitations:
+- Only UART0 is supported. UART1 is not yet supported.
+- Central and peripheral sides are fixed. That is, you can't plug it in on the peripheral side. Well, you can, but of course it won't work as a USB keyboard.
+
+[^2]: Almost any pin. USB data pins obviously won't work here.
+
+## Soft serial
+
+This is similar to QMK's `SOFT_SERIAL_PIN` (bitbanged half-duplex UART). FAK offers this in order to preserve compatibility with split keyboards designed for QMK + Pro Micro. You may also use this to be able to use one more pin for keys, since hardware UART uses two pins, but this, only one pin.
+
+For example, to use soft serial on pin 16: `split.channel = SoftSerialPin 16`. See also the provided [example keyboard definition](https://github.com/semickolon/fak-config/blob/main/keyboards/klor/keyboard.ncl) for [KLOR](https://github.com/GEIGEIGEIST/KLOR).
+
