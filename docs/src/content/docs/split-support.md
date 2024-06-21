@@ -44,6 +44,7 @@ let side_periph = {
     D 30, D 11,   S 3, S 4, S 5,
   ]
 }
+```
 
 ### Limitations:
 - Only UART0 is supported. UART1 is not yet supported.
